@@ -7,26 +7,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # ${{ github.action_path }}
       - name: List files
         run: |
           find /home/runner/work/_actions -path '*/action/action.yml'
 
-          for sha in \
+          for ver in \
             48d3ad6db93f3627c8ee7a0454bc6f3744f7e730 \
             bcb88e3bed2e992f5f9e24c0f9e364a231d278eb \
             v4                                       ;
           do
-            if [[ ! -d /home/runner/work/_actions/jurplel/install-qt-action/$sha ]]; then
+
+            if [[ ! -d /home/runner/work/_actions/jurplel/install-qt-action/$ver ]]; then
               continue
             fi
 
             echo '---'
 
-            pushd /home/runner/work/_actions/jurplel/install-qt-action/$sha
+            pushd /home/runner/work/_actions/jurplel/install-qt-action/$ver
 
             md5sum ./action.yml
-            grep -rnw -A 5 '    uses:' ./action.yml
+            grep -rnw -C 1 '    uses:' ./action.yml
 
             md5sum ./action/action.yml
             grep -rnw -A 5 'py7zrversion:' ./action/action.yml
