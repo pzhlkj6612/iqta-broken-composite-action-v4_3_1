@@ -21,7 +21,7 @@ jobs:
               continue
             fi
 
-            echo '---'
+            echo '---------------------------------------------------------'
 
             pushd /home/runner/work/_actions/jurplel/install-qt-action/$ver
 
@@ -31,7 +31,7 @@ jobs:
             md5sum ./action/action.yml
             grep -rnw -A 5 'py7zrversion:' ./action/action.yml
 
-            echo '==='
+            echo '========================================================='
           done
           popd
 
