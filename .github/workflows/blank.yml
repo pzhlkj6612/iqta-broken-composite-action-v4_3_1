@@ -11,8 +11,9 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@bcb88e3bed2e992f5f9e24c0f9e364a231d278eb  # v4.4.0
       - run: |
+          set -x
           pushd /home/runner/work/_actions/jurplel/install-qt-action/bcb88e3bed2e992f5f9e24c0f9e364a231d278eb
           find .
           md5sum ./action/action.yml
-          grep -rnw '    uses: ' ./action/action.yml
+          grep -rnw 'uses: ' ./action/action.yml
           popd
