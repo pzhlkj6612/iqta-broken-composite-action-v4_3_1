@@ -10,7 +10,7 @@ jobs:
       # ${{ github.action_path }}
       - name: List files
         run: |
-          find /home/runner/work/_actions -path 'action/action.yml'
+          find /home/runner/work/_actions -path '*/action/action.yml'
 
           for sha in \
             48d3ad6db93f3627c8ee7a0454bc6f3744f7e730 \
