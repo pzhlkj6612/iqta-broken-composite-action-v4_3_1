@@ -8,5 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
+          pwd
           find .
         working-directory: ${{ github.action_path }}
